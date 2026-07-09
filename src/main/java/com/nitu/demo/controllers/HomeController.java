@@ -69,7 +69,7 @@ public class HomeController {
 	@GetMapping("/getAlienByName")
     public String getAlienByName(@RequestParam("name") String name,ModelMap m) {
 		
-    	List<Alien> aliens = repo.findByName(name);
+    	List<Alien> aliens = repo.findByNameOrderById(name);
     	m.addAttribute("aliens", aliens);
     	return "showAlienByName";
     }

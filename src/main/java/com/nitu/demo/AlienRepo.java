@@ -10,6 +10,6 @@ import java.util.List;
 public interface AlienRepo extends JpaRepository<Alien, Integer>{
 
 
-	List<Alien> findByName(String name); // Querry DSL
+	List<Alien> findByNameOrderById(String name); // Querry DSL
 	
 }
