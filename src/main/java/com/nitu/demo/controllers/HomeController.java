@@ -1,7 +1,9 @@
 package com.nitu.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
+
 
 
 import org.springframework.ui.ModelMap;
@@ -13,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.nitu.demo.AlienRepo;
 import com.nitu.demo.models.Alien;
 
-import ch.qos.logback.core.model.Model;
-
+//import ch.qos.logback.core.model.Model;
+import java.util.List;
 @Controller
 public class HomeController {
 	
@@ -66,7 +68,9 @@ public class HomeController {
 	
 	@GetMapping("/getAlienByName")
     public String getAlienByName(@RequestParam("name") String name,ModelMap m) {
-    	m.addAttribute("alien",repo.findByName(name));
-    	return "showAlien";
+		
+    	List<Alien> aliens = repo.findByName(name);
+    	m.addAttribute("aliens", aliens);
+    	return "showAlienByName";
     }
 }
