@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Details</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav{
+            background: #1f2937;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .logo{
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .search-bar input{
+            padding: 8px 14px;
+            border: none;
+            border-radius: 20px;
+            width: 220px;
+            outline: none;
+        }
+
+        .nav-links a{
+            text-decoration: none;
+            color: white;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover{
+            color: #60a5fa;
+        }
+
+        /* Card */
+        .container{
+            width: 500px;
+            margin: 80px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            margin-bottom: 30px;
+            color: #1f2937;
+        }
+
+        .alien-info{
+            text-align: left;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+        }
+
+        .alien-info p{
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .label{
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .value{
+            color: #2563eb;
+        }
+
+        .back-btn{
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 20px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover{
+            background: #1d4ed8;
+        }
+
+        footer{
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 120px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">BIG LOGO</div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search here...">
+        </div>
+
+        <div class="nav-links">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Alien Details -->
+    <div class="container">
+
+        <h1>Alien Details</h1>
+
+        <div class="alien-info">
+
+            <p>
+                <span class="label">Alien ID:</span>
+                <span class="value" th:text="${alien.id}"></span>
+            </p>
+
+            <p>
+                <span class="label">Alien Name:</span>
+                <span class="value" th:text="${alien.name}"></span>
+            </p>
+
+        </div>
+
+        <a href="/" class="back-btn">Back to Home</a>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Alien Registration Portal | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

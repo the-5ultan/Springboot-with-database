@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showing Aliens</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav{
+            background: #1f2937;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .logo{
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .search-bar input{
+            padding: 8px 14px;
+            border: none;
+            border-radius: 20px;
+            width: 220px;
+            outline: none;
+        }
+
+        .nav-links a{
+            text-decoration: none;
+            color: white;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover{
+            color: #60a5fa;
+        }
+
+        /* Result Card */
+        .container{
+            width: 500px;
+            margin: 80px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        h2{
+            font-size: 24px;
+            color: #444;
+        }
+
+        .result-text{
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer{
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 120px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">BIG LOGO</div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search here...">
+        </div>
+
+        <div class="nav-links">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Result Section -->
+    <div class="container">
+
+        <h1>Showing all of the Aliens</h1>
+
+            <div th:each="alien : ${result}">
+                <p>ID: <span th:text="${alien.id}"></span></p>
+                <p>Name: <span th:text="${alien.name}"></span></p>
+                <hr>
+            </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Alien Registration Portal | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

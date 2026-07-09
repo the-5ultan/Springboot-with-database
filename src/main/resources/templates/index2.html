@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Home 2</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav{
+            background: #1f2937;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .logo{
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .search-bar input{
+            padding: 8px 14px;
+            border: none;
+            border-radius: 20px;
+            width: 220px;
+            outline: none;
+        }
+
+        .nav-links a{
+            text-decoration: none;
+            color: white;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover{
+            color: #60a5fa;
+        }
+
+        /* Form Section */
+        .container{
+            width: 400px;
+            margin: 70px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            text-align: center;
+            margin-bottom: 25px;
+            color: #1f2937;
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        input[type="text"]{
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:focus{
+            border-color: #2563eb;
+            box-shadow: 0 0 5px rgba(37,99,235,0.4);
+        }
+
+        input[type="submit"]{
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover{
+            background: #1d4ed8;
+        }
+
+        /* Footer */
+        footer{
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">BIG LOGO</div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search here...">
+        </div>
+
+        <div class="nav-links">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Form -->
+    <div class="container">
+        <h1>Hey Alien Enter Your Details</h1>
+
+        <form action="addAlien" method="post">
+
+            <label>Enter your id :</label>
+            <input type="text" name="id">
+
+            <label>Enter your name :</label>
+            <input type="text" name="name">
+
+            <input type="submit" value="Submit">
+
+        </form>
+        <hr>
+        <h1>Search by id</h1>
+        <form action="getAlien" method="get">
+
+            <label>Enter your id :</label>
+            <input type="text" name="aid">
+            <input type="submit" value="Submit">
+
+        </form>
+        <h1>Search by Alien name</h1>
+        <form action="getAlienByName" method="get">
+
+            <label>Enter name :</label>
+            <input type="text" name="name">
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Alien Registration Portal | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
