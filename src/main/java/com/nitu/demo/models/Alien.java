@@ -25,7 +25,12 @@ public class Alien {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	public Alien() {}
+	public Alien(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 	@Override
 	public String toString() {
 		return "Alien [id=" + id + ", name=" + name + "]";
