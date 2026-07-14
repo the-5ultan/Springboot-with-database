@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,7 +36,7 @@ public class AlienController {
 	}
 	
 	@PostMapping("alien")
-	public Alien addAlien(Alien alien) {
+	public Alien addAlien(@RequestBody Alien alien) {      //If the data is coming in any other format except java object format the @RequestBody is required to convert it to the java object format
 		repo.save(alien);
 		return alien;
 	}
