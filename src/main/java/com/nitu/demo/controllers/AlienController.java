@@ -20,7 +20,7 @@ import com.nitu.demo.models.Alien;
 public class AlienController {
 	@Autowired
 	AlienRepo repo;
-	@GetMapping("/aliens")
+	@GetMapping(path="aliens",produces = {"application/xml"}) // limited the return to XML type only
 	//@ResponseBody                       we can instead change the class controller to RestController
     public List<Alien> getAliens() {
     	List<Alien> aliens = repo.findAll();
