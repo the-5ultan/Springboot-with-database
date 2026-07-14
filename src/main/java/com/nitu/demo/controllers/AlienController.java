@@ -1,6 +1,7 @@
 package com.nitu.demo.controllers;
 
 
+import java.awt.PageAttributes.MediaType;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +15,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nitu.demo.AlienRepo;
+import com.nitu.demo.Springboot1stApplication;
 import com.nitu.demo.models.Alien;
 
 
 @RestController
 public class AlienController {
+
+    private final Springboot1stApplication springboot1stApplication;
 	@Autowired
 	AlienRepo repo;
+
+    AlienController(Springboot1stApplication springboot1stApplication) {
+        this.springboot1stApplication = springboot1stApplication;
+    }
 	@GetMapping(path="aliens",produces = {"application/xml"}) // limited the return to XML type only
 	//@ResponseBody                       we can instead change the class controller to RestController
     public List<Alien> getAliens() {
@@ -35,7 +43,7 @@ public class AlienController {
 		return alien;
 	}
 	
-	@PostMapping("alien")
+	@PostMapping(path ="alien", consumes = {"application/json"}) // now it is only gonna accept json input none other is gonna work !
 	public Alien addAlien(@RequestBody Alien alien) {      //If the data is coming in any other format except java object format the @RequestBody is required to convert it to the java object format
 		repo.save(alien);
 		return alien;
