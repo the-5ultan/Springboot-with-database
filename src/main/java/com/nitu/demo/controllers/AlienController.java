@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nitu.demo.AlienRepo;
+import com.nitu.demo.repositories.AlienRepo;
 import com.nitu.demo.Springboot1stApplication;
 import com.nitu.demo.models.Alien;
 

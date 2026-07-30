@@ -1,4 +1,4 @@
-package com.nitu.demo;
+package com.nitu.demo.repositories;
 
 //import org.jspecify.annotations.Nullable;
 import org.springframework.data.jpa.repository.JpaRepository;

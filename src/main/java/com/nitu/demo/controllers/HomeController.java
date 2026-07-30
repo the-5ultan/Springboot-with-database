@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.nitu.demo.AlienRepo;
+import com.nitu.demo.repositories.AlienRepo;
 import com.nitu.demo.models.Alien;
 
 //import ch.qos.logback.core.model.Model;
